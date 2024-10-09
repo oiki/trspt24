@@ -1,0 +1,304 @@
+
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6oIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .section-header {
+            background-color: #d1e0f0;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .section {
+            border: 1px solid #d1e0f0;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn-group {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="section-header">DEMANDE DE TRANSPORT PATIENT – (CREA)</div>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="creation">Création :</label>
+                    <input type="datetime-local" class="form-control" id="creation" readonly>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="modification">Modification :</label>
+                    <input type="datetime-local" class="form-control" id="modification" readonly>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="num">Num :</label>
+                    <input type="text" class="form-control" id="num">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="ref">Ref :</label>
+                    <input type="number" class="form-control" id="ref" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Patient</div>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="nom-usuel">Nom usuel :</label>
+                    <input type="text" class="form-control" id="nom-usuel">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="ipp">N° IPP :</label>
+                    <input type="text" class="form-control" id="ipp">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="ne-le">Né le :</label>
+                    <input type="text" class="form-control" id="ne-le">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="categorie">Catégorie :</label>
+                    <input type="text" class="form-control" id="categorie">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" class="form-control" id="prenom">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="sejour">N° Séjour :</label>
+                    <input type="text" class="form-control" id="sejour">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="sexe">Sexe :</label>
+                    <input type="text" class="form-control" id="sexe">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="chambre">Chambre :</label>
+                    <input type="text" class="form-control" id="chambre">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="lit">Lit :</label>
+                    <input type="text" class="form-control" id="lit">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">Particularités</div>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="type-transport">Type de transport :</label>
+                    <input type="text" class="form-control" id="type-transport" value="Normal">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="medecin-prescripteur">Médecin prescripteur :</label>
+                    <input type="text" class="form-control" id="medecin-prescripteur">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="precaution">Précaution :</label>
+                    <input type="text" class="form-control" id="precaution">
+                </div>
+                <div class="col-md-3 form-group">
+                    <label>BMR ?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="bmr" id="bmr-non" value="non" checked>
+                        <label class="form-check-label" for="bmr-non">Non</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="bmr" id="bmr-oui" value="oui">
+                        <label class="form-check-label" for="bmr-oui">Oui</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label>Poids supérieur à 100Kg ?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="poids" id="poids-non" value="non" checked>
+                        <label class="form-check-label" for="poids-non">Non</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="poids" id="poids-oui" value="oui">
+                        <label class="form-check-label" for="poids-oui">Oui</label>
+                    </div>
+                    <input type="text" class="form-control mt-2" id="poids-kg" placeholder="Kg">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label for="particularites">Particularités :</label>
+                    <input type="text" class="form-control" id="particularites">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label for="accompagnants">Accompagnants :</label>
+                    <input type="text" class="form-control" id="accompagnants">
+                </div>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-success">Ajouter examen et/ou observations</button>
+            </div>
+        </div>
+
+        <div id="transports-container">
+            <div class="section transport-section">
+                <div class="section-header">Transport(s)</div>
+                <div class="row">
+                    <div class="col-md-3 form-group">
+                        <label for="pour-le">Pour le :</label>
+                        <input type="date" class="form-control" id="pour-le" value="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label for="depart">Départ :</label>
+                        <input type="text" class="form-control" id="depart">
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label for="motif">Motif :</label>
+                        <input type="text" class="form-control" id="motif">
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label for="h-rdv">H. Rdv :</label>
+                        <input type="time" class="form-control" id="h-rdv" value="<?php echo date('H:i', strtotime('+15 minutes')); ?>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 form-group">
+                        <label for="mode">Mode :</label>
+                        <input type="text" class="form-control" id="mode">
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label for="activite">Activité :</label>
+                        <select class="form-control" id="activite">
+                            <option value="" selected disabled></option>
+                            <option value="NDPP1/2 Privé 6321">NDPP1/2 Privé 6321</option>
+                            <option value="N22ème Etage Pneumologie 2200">N22ème Etage Pneumologie 2200</option>
+                            <option value="ACCNAcceuil Nyon 7499">ACCNAcceuil Nyon 7499</option>
+                            <option value="ACCRAcceuil Rolle 7500">ACCRAcceuil Rolle 7500</option>
+                            <option value="BOPBloc Opératoire Central 7485">BOPBloc Opératoire Central 7485</option>
+                            <option value="CABLCabinet Dr Bloch 7503">CABLCabinet Dr Bloch 7503</option>
+                            <option value="CABOCabinet Dr Bochatay 7504">CABOCabinet Dr Bochatay 7504</option>
+                            <option value="CAGCabinet Dr Gkouvatsos 7505">CAGCabinet Dr Gkouvatsos 7505</option>
+                            <option value="CAHCabinet Dr Hermenjat 7506">CAHCabinet Dr Hermenjat 7506</option>
+                            <option value="CAKCabinet Dr Kellou 7507">CAKCabinet Dr Kellou 7507</option>
+                            <option value="CASCabinet Dr Sadowski 7509">CASCabinet Dr Sadowski 7509</option>
+                            <option value="CAZCabinet Dr Zufferey 7510">CAZCabinet Dr Zufferey 7510</option>
+                            <option value="CONSN3Cabinets Corjon 7490">CONSN3Cabinets Corjon 7490</option>
+                            <option value="CONSN2Cabinets Paléo 1er 7489">CONSN2Cabinets Paléo 1er 7489</option>
+                            <option value="CONSN1Cabinets Paléo RDC 7488">CONSN1Cabinets Paléo RDC 7488</option>
+                            <option value="CONSNCabinets Patio 7487">CONSNCabinets Patio 7487</option>
+                            <option value="CAROCarrousel 7502">CAROCarrousel 7502</option>
+                            <option value="NURG1Centre de Consultatio 7469">NURG1Centre de Consultatio 7469</option>
+                            <option value="NU1AChirurgie 6157">NU1AChirurgie 6157</option>
+                            <option value="NONAConsultation Oncologie 6020">NONAConsultation Oncologie 6020</option>
+                            <option value="CONSRConsultations Divers 7492">CONSRConsultations Divers 7492</option>
+                            <option value="RFPAConsultations Fonction 7491">RFPAConsultations Fonction 7491</option>
+                            <option value="CUISCuisine 7501">CUISCuisine 7501</option>
+                            <option value="NDIEDietetique Nyon 7511">NDIEDietetique Nyon 7511</option>
+                            <option value="RDIEDietetique Rolle 7512">RDIEDietetique Rolle 7512</option>
+                            <option value="DIRNDirection 7497">DIRNDirection 7497</option>
+                            <option value="REMSEMS Cèdres 2301">REMSEMS Cèdres 2301</option>
+                            <option value="RGEREMS Magnolias 2302">RGEREMS Magnolias 2302</option>
+                            <option value="NLAALaboratoire 6030">NLAALaboratoire 6030</option>
+                            <option value="LOGINLogistique 7497">LOGINLogistique 7497</option>
+                            <option value="MAGAMagasin 7496">MAGAMagasin 7496</option>
+                            <option value="NU2Médecine 6101">NU2Médecine 6101</option>
+                            <option value="NU3CObstétrique Maternité 6236">NU3CObstétrique Maternité 6236</option>
+                            <option value="NU1BOrthopédie 6125">NU1BOrthopédie 6125</option>
+                            <option value="PMSCPerrmanence Médicale d 9999">PMSCPerrmanence Médicale d 9999</option>
+                            <option value="PHARMNPharmacie 7494">PHARMNPharmacie 7494</option>
+                            <option value="RMEDPneumologie 2001">RMEDPneumologie 2001</option>
+                            <option value="NPPPrivé 6301">NPPPrivé 6301</option>
+                            <option value="NU3BPédiatrie 6222">NU3BPédiatrie 6222</option>
+                            <option value="RADNRadiologie 7498">RADNRadiologie 7498</option>
+                            <option value="RCCRolle - Cabinet Medical 7516">RCCRolle - Cabinet Medical 7516</option>
+                            <option value="NSACSalle Accouchement 7514">NSACSalle Accouchement 7514</option>
+                            <option value="BOP1Salle de Réveil 7486">BOP1Salle de Réveil 7486</option>
+                            <option value="NREVSalle de Réveil 7513">NREVSalle de Réveil 7513</option>
+                            <option value="NSISoins Intensifs 6005">NSISoins Intensifs 6005</option>
+                            <option value="STERNStérilisation 7495">STERNStérilisation 7495</option>
+                            <option value="NCCAUnitée Ambulatoire CCA 7482">NCCAUnitée Ambulatoire CCA 7482</option>
+                            <option value="NNEPUnitée Ambulatoire Dia 7492">NNEPUnitée Ambulatoire Dia 7492</option>
+                            <option value="UIMCUnitée de Soins Interm 6001">UIMCUnitée de Soins Interm 6001</option>
+                            <option value="NHDJUnitée Hopital de Jour 7493">NHDJUnitée Hopital de Jour 7493</option>
+                            <option value="NURG2Unitée Observation de 7470">NURG2Unitée Observation de 7470</option>
+                            <option value="NURGUrgences Adultes 7468">NURGUrgences Adultes 7468</option>
+                            <option value="NURPUrgences Pédiatriques 7515">NURPUrgences Pédiatriques 7515</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 form-group">
+                        <label for="rdv1">Rdv 1 :</label>
+                        <input type="text" class="form-control" id="rdv1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" id="add-transport">Ajouter un rendez-vous</button>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary">Retour à la liste</button>
+            <button type="button" class="btn btn-success">Valider</button>
+        </div>
+    </div>
+
+    <script>
+        let requestCounter = 1;
+
+        document.getElementById('add-transport').addEventListener('click', function() {
+            var transportSection = document.querySelector('.transport-section');
+            var newTransportSection = transportSection.cloneNode(true);
+            document.getElementById('transports-container').appendChild(newTransportSection);
+        });
+
+        // Set default date and time for the first transport section
+        document.addEventListener('DOMContentLoaded', function() {
+            var dateInput = document.querySelector('.transport-section #pour-le');
+            var timeInput = document.querySelector('.transport-section #h-rdv');
+            var now = new Date();
+            var dateString = now.toISOString().split('T')[0];
+            var timeString = new Date(now.getTime() + 15 * 60000).toTimeString().split(' ')[0].substring(0, 5);
+            dateInput.value = dateString;
+            timeInput.value = timeString;
+
+            // Set creation and modification date-time
+            var creationInput = document.getElementById('creation');
+            var modificationInput = document.getElementById('modification');
+            var currentDateTime = now.toISOString().substring(0, 16);
+            creationInput.value = currentDateTime;
+            modificationInput.value = currentDateTime;
+
+            // Set request counter
+            var refInput = document.getElementById('ref');
+            refInput.value = requestCounter++;
+        });
+
+        // Update modification date-time on any input change
+        document.querySelectorAll('input, select').forEach(function(input) {
+            input.addEventListener('change', function() {
+                var modificationInput = document.getElementById('modification');
+                var now = new Date();
+                var currentDateTime = now.toISOString().substring(0, 16);
+                modificationInput.value = currentDateTime;
+            });
+        });
+    </script>
+</body>
+</html>
