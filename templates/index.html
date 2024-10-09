@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Map</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        .bubble {
+            cursor: pointer;
+            fill: steelblue;
+            stroke: black;
+            stroke-width: 1.5px;
+        }
+    </style>
+</head>
+<body>
+    <svg width="960" height="600"></svg>
+    <script>
+        const data = {
+            name: "Root",
+            children: [
+                { name: "Child 1" },
+                { name: "Child 2" },
+                { name: "Child 3" }
+            ]
+        };
+
+        const svg = d3.select("svg"),
+              width = +svg.attr("width"),
+              height = +svg.attr("height");
+
+        const bubble = d3.pack(data)
+            .size([width, height])
+            .padding(1.5);
+
+        const root = d3.hierarchy(data)
+            .sum(d => d.value);
+
+        bubble(root);
+
+        const node = svg.selectAll(".node")
+            .data(root.children)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+
+        node.append("circle")
+            .attr("class", "bubble")
+            .attr("r", d => d.r)
+            .on("click", function(event, d) {
+                const note = prompt("Enter your note:");
+                if (note) {
+                    fetch('/add_note', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ bubble_id: d.data.name, note: note })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(`Note added to ${data.bubble_id}: ${data.note}`);
+                    });
+                }
+            });
+
+        node.append("text")
+            .attr("dy", ".3em")
+            .style("text-anchor", "middle")
+            .text(d => d.data.name);
+    </script>
+</body>
+</html>
